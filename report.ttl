@@ -3,30 +3,11 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 
-<http://vocab.linkeddata.es/ontology/report#entrySubject>
-        a       rdf:Property .
-
-<http://vocab.linkeddata.es/ontology/report#hasEntry>
-        a       rdf:Property .
-
-<http://vocab.linkeddata.es/ontology/report#MISSINGTITLEORDESC>
-        a           <http://vocab.linkeddata.es/ontology/report#Warning> ;
-        rdfs:label  "Warning: title or description missing from vocabulary" .
-
-<http://vocab.linkeddata.es/ontology/report#numberVocabsOK>
+<http://vocab.linkeddata.es/ontology/report#numberVocabsWarning>
         a       owl:DatatypeProperty .
 
-<http://vocab.linkeddata.es/ontology/report#ENTRY1650156391185HOMEAHMADREPOSPREVCLONE-GL0NTHEWITCHEROWL>
-        a           <http://vocab.linkeddata.es/ontology/report#Entry> ;
-        rdfs:label  "Entry for vocab /home/ahmad/repos/prevclone-gL0n/TheWitcher.owl" ;
-        <http://vocab.linkeddata.es/ontology/report#detectedProblem>
-                <http://vocab.linkeddata.es/ontology/report#LANGUAGENOTFOUND> , <http://vocab.linkeddata.es/ontology/report#MISSINGTITLEORDESC> ;
-        <http://vocab.linkeddata.es/ontology/report#entrySubject>
-                <http://vocab.linkeddata.es/ontology/report#/HOMEAHMADREPOSPREVCLONE-GL0NTHEWITCHER.OWL> ;
-        <http://vocab.linkeddata.es/ontology/report#isEntryOfReport>
-                <http://vocab.linkeddata.es/ontology/report#REPORT1650156391185> ;
-        <http://vocab.linkeddata.es/ontology/report#vocabularyStatus>
-                "http://vocab.linkeddata.es/ontology/report#warning" .
+<http://vocab.linkeddata.es/ontology/report#entrySubject>
+        a       rdf:Property .
 
 <http://vocab.linkeddata.es/ontology/report#LANGUAGENOTFOUND>
         a           <http://vocab.linkeddata.es/ontology/report#Warning> ;
@@ -35,8 +16,21 @@
 <http://vocab.linkeddata.es/ontology/report#vocabularyStatus>
         a       rdf:Property .
 
-<http://vocab.linkeddata.es/ontology/report#numberVocabsError>
-        a       owl:DatatypeProperty .
+<http://vocab.linkeddata.es/ontology/report#REPORT1650189951978>
+        a           <http://vocab.linkeddata.es/ontology/report#Report> ;
+        rdfs:label  "Report created on Sun Apr 17 12:05:51 CEST 2022" ;
+        <http://vocab.linkeddata.es/ontology/report#hasEntry>
+                <http://vocab.linkeddata.es/ontology/report#ENTRY1650189951978REPORTTTL> , <http://vocab.linkeddata.es/ontology/report#ENTRY1650189951978HOMEAHMADREPOSPREVCLONE-KFRRONTOLOGIESTHEWITCHEROWL> ;
+        <http://vocab.linkeddata.es/ontology/report#numberVocabsError>
+                "1" ;
+        <http://vocab.linkeddata.es/ontology/report#numberVocabsOK>
+                "0" ;
+        <http://vocab.linkeddata.es/ontology/report#numberVocabsWarning>
+                "1" ;
+        <http://vocab.linkeddata.es/ontology/report#reportDate>
+                "Sun Apr 17 12:05:51 CEST 2022"^^xsd:dateTime .
+
+rdfs:label  a   owl:DatatypeProperty .
 
 <http://vocab.linkeddata.es/ontology/report#reportDate>
         a       owl:DatatypeProperty .
@@ -44,33 +38,58 @@
 <http://vocab.linkeddata.es/ontology/report#isEntryOfReport>
         a       rdf:Property .
 
-<http://vocab.linkeddata.es/ontology/report#Warning>
+<http://vocab.linkeddata.es/ontology/report#Error>
         a       owl:Class .
-
-<http://vocab.linkeddata.es/ontology/report#detectedProblem>
-        a       rdf:Property .
-
-<http://vocab.linkeddata.es/ontology/report#Entry>
-        a       owl:Class .
-
-<http://vocab.linkeddata.es/ontology/report#numberVocabsWarning>
-        a       owl:DatatypeProperty .
 
 <http://vocab.linkeddata.es/ontology/report#Report>
         a       owl:Class .
 
-<http://vocab.linkeddata.es/ontology/report#REPORT1650156391185>
-        a           <http://vocab.linkeddata.es/ontology/report#Report> ;
-        rdfs:label  "Report created on Sun Apr 17 02:46:31 CEST 2022" ;
-        <http://vocab.linkeddata.es/ontology/report#hasEntry>
-                <http://vocab.linkeddata.es/ontology/report#ENTRY1650156391185HOMEAHMADREPOSPREVCLONE-GL0NTHEWITCHEROWL> ;
-        <http://vocab.linkeddata.es/ontology/report#numberVocabsError>
-                "0" ;
-        <http://vocab.linkeddata.es/ontology/report#numberVocabsOK>
-                "0" ;
-        <http://vocab.linkeddata.es/ontology/report#numberVocabsWarning>
-                "1" ;
-        <http://vocab.linkeddata.es/ontology/report#reportDate>
-                "Sun Apr 17 02:46:31 CEST 2022"^^xsd:dateTime .
+<http://vocab.linkeddata.es/ontology/report#MISSINGTITLEORDESC>
+        a           <http://vocab.linkeddata.es/ontology/report#Warning> ;
+        rdfs:label  "Warning: title or description missing from vocabulary" .
 
-rdfs:label  a   owl:DatatypeProperty .
+<http://vocab.linkeddata.es/ontology/report#ENTRY1650189951978HOMEAHMADREPOSPREVCLONE-KFRRONTOLOGIESTHEWITCHEROWL>
+        a           <http://vocab.linkeddata.es/ontology/report#Entry> ;
+        rdfs:label  "Entry for vocab /home/ahmad/repos/prevclone-Kfrr/ontologies/TheWitcher.owl" ;
+        <http://vocab.linkeddata.es/ontology/report#detectedProblem>
+                <http://vocab.linkeddata.es/ontology/report#LANGUAGENOTFOUND> , <http://vocab.linkeddata.es/ontology/report#MISSINGTITLEORDESC> ;
+        <http://vocab.linkeddata.es/ontology/report#entrySubject>
+                <http://vocab.linkeddata.es/ontology/report#/HOMEAHMADREPOSPREVCLONE-KFRRONTOLOGIESTHEWITCHER.OWL> ;
+        <http://vocab.linkeddata.es/ontology/report#isEntryOfReport>
+                <http://vocab.linkeddata.es/ontology/report#REPORT1650189951978> ;
+        <http://vocab.linkeddata.es/ontology/report#vocabularyStatus>
+                "http://vocab.linkeddata.es/ontology/report#warning" .
+
+<http://vocab.linkeddata.es/ontology/report#GENERICERROR>
+        a           <http://vocab.linkeddata.es/ontology/report#Error> ;
+        rdfs:label  "Error: the vocabulary could not be loaded or processed" .
+
+<http://vocab.linkeddata.es/ontology/report#ENTRY1650189951978REPORTTTL>
+        a           <http://vocab.linkeddata.es/ontology/report#Entry> ;
+        rdfs:label  "Entry for vocab report.ttl" ;
+        <http://vocab.linkeddata.es/ontology/report#detectedProblem>
+                <http://vocab.linkeddata.es/ontology/report#GENERICERROR> ;
+        <http://vocab.linkeddata.es/ontology/report#entrySubject>
+                <http://vocab.linkeddata.es/ontology/report#REPORT.TTL> ;
+        <http://vocab.linkeddata.es/ontology/report#isEntryOfReport>
+                <http://vocab.linkeddata.es/ontology/report#REPORT1650189951978> ;
+        <http://vocab.linkeddata.es/ontology/report#vocabularyStatus>
+                "http://vocab.linkeddata.es/ontology/report#error" .
+
+<http://vocab.linkeddata.es/ontology/report#numberVocabsError>
+        a       owl:DatatypeProperty .
+
+<http://vocab.linkeddata.es/ontology/report#Entry>
+        a       owl:Class .
+
+<http://vocab.linkeddata.es/ontology/report#Warning>
+        a       owl:Class .
+
+<http://vocab.linkeddata.es/ontology/report#numberVocabsOK>
+        a       owl:DatatypeProperty .
+
+<http://vocab.linkeddata.es/ontology/report#hasEntry>
+        a       rdf:Property .
+
+<http://vocab.linkeddata.es/ontology/report#detectedProblem>
+        a       rdf:Property .
