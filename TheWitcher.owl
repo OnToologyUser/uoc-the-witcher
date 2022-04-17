@@ -1,0 +1,2148 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/nick/ontologies/2022/3/the-witcher#"
+     xml:base="http://www.semanticweb.org/nick/ontologies/2022/3/the-witcher"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:Person="https://dbpedia.org/ontology/Person#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/nick/ontologies/2022/3/the-witcher">
+        <rdfs:comment xml:lang="author: nick soare stanciu">The Witcher Netflix Series Dataset.
+
+Author: 
+Nick Soare Stanciu</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#sameAs -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#sameAs"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#at_peace_with -->
+
+    <owl:ObjectProperty rdf:about="https://dbpedia.org/ontology/Person#at_peace_with">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://dbpedia.org/ontology/Person#Location"/>
+        <rdfs:range rdf:resource="https://dbpedia.org/ontology/Person#Location"/>
+        <owl:propertyDisjointWith rdf:resource="https://dbpedia.org/ontology/Person#is_at_war_with"/>
+        <rdfs:comment>A country has a peace treaty with another.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#disables_magic -->
+
+    <owl:ObjectProperty rdf:about="https://dbpedia.org/ontology/Person#disables_magic">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="https://dbpedia.org/ontology/Person#magic_disabled_by"/>
+        <rdfs:domain rdf:resource="https://dbpedia.org/ontology/Person#Dimeritium"/>
+        <rdfs:range rdf:resource="https://dbpedia.org/ontology/Person#Chaos"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#has_elder_blood -->
+
+    <owl:ObjectProperty rdf:about="https://dbpedia.org/ontology/Person#has_elder_blood">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://dbpedia.org/ontology/Person#Elder_Blood"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://dbpedia.org/ontology/Person#is_a_sorcerer"/>
+                <owl:someValuesFrom rdf:resource="https://dbpedia.org/ontology/Person#Elf"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://dbpedia.org/ontology/Person#is_a_sorcerer"/>
+                <owl:someValuesFrom rdf:resource="https://dbpedia.org/ontology/Person#Part-Elf"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:comment>Who can have Elder Blood?</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#is_a_druid -->
+
+    <owl:ObjectProperty rdf:about="https://dbpedia.org/ontology/Person#is_a_druid">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://dbpedia.org/ontology/Person#Druid"/>
+        <rdfs:range rdf:resource="https://dbpedia.org/ontology/Person#Human"/>
+        <rdfs:comment>Who can be a druid?</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#is_a_sorcerer -->
+
+    <owl:ObjectProperty rdf:about="https://dbpedia.org/ontology/Person#is_a_sorcerer">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://dbpedia.org/ontology/Person#Sorcerer"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://dbpedia.org/ontology/Person#is_a_sorcerer"/>
+                <owl:someValuesFrom rdf:resource="https://dbpedia.org/ontology/Person#Elf"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://dbpedia.org/ontology/Person#is_a_sorcerer"/>
+                <owl:someValuesFrom rdf:resource="https://dbpedia.org/ontology/Person#Human"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://dbpedia.org/ontology/Person#is_a_sorcerer"/>
+                <owl:someValuesFrom rdf:resource="https://dbpedia.org/ontology/Person#Part-Elf"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:comment>Who can be a sorcerer?</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#is_at_war_with -->
+
+    <owl:ObjectProperty rdf:about="https://dbpedia.org/ontology/Person#is_at_war_with">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://dbpedia.org/ontology/Person#Location"/>
+        <rdfs:range rdf:resource="https://dbpedia.org/ontology/Person#Location"/>
+        <rdfs:comment>A country is at war with another</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#is_weak_to_oil -->
+
+    <owl:ObjectProperty rdf:about="https://dbpedia.org/ontology/Person#is_weak_to_oil">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://dbpedia.org/ontology/Person#Monster"/>
+        <rdfs:range rdf:resource="https://dbpedia.org/ontology/Person#Oil"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#magic_disabled_by -->
+
+    <owl:ObjectProperty rdf:about="https://dbpedia.org/ontology/Person#magic_disabled_by">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://dbpedia.org/ontology/Person#Chaos"/>
+        <rdfs:range rdf:resource="https://dbpedia.org/ontology/Person#Dimeritium"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#use_magic -->
+
+    <owl:ObjectProperty rdf:about="https://dbpedia.org/ontology/Person#use_magic">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://dbpedia.org/ontology/Person#use_magic"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/nick/ontologies/2022/3/the-witcher#Person"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://dbpedia.org/ontology/Person#Chaos"/>
+        <rdfs:comment>Who can use magic?</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#use_potion -->
+
+    <owl:ObjectProperty rdf:about="https://dbpedia.org/ontology/Person#use_potion">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://dbpedia.org/ontology/Person#Witcher"/>
+        <rdfs:range rdf:resource="https://dbpedia.org/ontology/Person#Potion"/>
+        <rdfs:comment>Who can use potions?</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#use_signs -->
+
+    <owl:ObjectProperty rdf:about="https://dbpedia.org/ontology/Person#use_signs">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://dbpedia.org/ontology/Person#Witcher"/>
+        <rdfs:range rdf:resource="https://dbpedia.org/ontology/Person#Signs"/>
+        <rdfs:comment>Who can use signs?</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topDataProperty -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topDataProperty">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#can_shapeshift -->
+
+    <owl:DatatypeProperty rdf:about="https://dbpedia.org/ontology/Person#can_shapeshift">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#has_age -->
+
+    <owl:DatatypeProperty rdf:about="https://dbpedia.org/ontology/Person#has_age">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/nick/ontologies/2022/3/the-witcher#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#is_diffunct -->
+
+    <owl:DatatypeProperty rdf:about="https://dbpedia.org/ontology/Person#is_diffunct">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://dbpedia.org/ontology/Person#Witcher_School"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#is_intelligent -->
+
+    <owl:DatatypeProperty rdf:about="https://dbpedia.org/ontology/Person#is_intelligent">
+        <rdfs:domain rdf:resource="https://dbpedia.org/ontology/Person#Vampire"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#is_weak_to_silver -->
+
+    <owl:DatatypeProperty rdf:about="https://dbpedia.org/ontology/Person#is_weak_to_silver">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://dbpedia.org/ontology/Person#Monster"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <owl:propertyDisjointWith rdf:resource="https://dbpedia.org/ontology/Person#is_weak_to_steel"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#is_weak_to_steel -->
+
+    <owl:DatatypeProperty rdf:about="https://dbpedia.org/ontology/Person#is_weak_to_steel">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://dbpedia.org/ontology/Person#Monster"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/nick/ontologies/2022/3/the-witcher#Person -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nick/ontologies/2022/3/the-witcher#Person">
+        <owl:disjointWith rdf:resource="https://dbpedia.org/ontology/Person#Monster"/>
+        <rdfs:comment>Human, non-human or humanoid intelligent creatures, able of speech and share traits with humans.</rdfs:comment>
+        <rdfs:sameAs>https://dbpedia.org/ontology/Person</rdfs:sameAs>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Ability -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Ability">
+        <rdfs:comment>Ability that a character might possess.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Alchemical -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Alchemical">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Item"/>
+        <rdfs:comment>Alchemy is the ancient science of chaging basic sustances (such as metals) into other substances with extraordinary properties (such as potions, poison, healing mixtures, protective runes, etc.)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Armor -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Armor">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Item"/>
+        <rdfs:comment>Armor that a character can wear as a defense agaisnt weapons.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Basilisk -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Basilisk">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Draconid"/>
+        <rdfs:comment>Bird like beaks and feet, batlike wings and reptile body with poisonous breath.</rdfs:comment>
+        <rdfs:comment>Hybrids are chimera like creatures, that combine one or various aspects of different species.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Black_Dragon -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Black_Dragon">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Dragon"/>
+        <rdfs:comment>Common Sub-species of dragon.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Bomb -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Bomb">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Alchemical"/>
+        <rdfs:comment>Alchemically made bombs are used against various types of monsters and exploit their weakness to elements such as silver, dimeritium, bright light, poisonous gas, fire, etec.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Chaos -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Chaos">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Ability"/>
+        <rdfs:comment>Chaos is the magic in The Witcher, only those born with the power, also known as &quot;Sources&quot; are capable of channeling chaos into magic and become druids or sorcerers.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Cursed -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Cursed">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Supernatural"/>
+        <rdfs:comment>The Cursed Ones are humans (also could be animals, places and even plants) that have been cursed and transformed into a hideos creature.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Dimeritium -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Dimeritium">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Alchemical"/>
+        <rdfs:comment>Dimeritium is a rare metal that nullifies the effect of chaos, and is very efficient against sorcerers and druids. Elder Blood descendants have a higher resistance to dimeritium.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Doppler -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Doppler">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Relict"/>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Draconid -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Draconid">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Monster"/>
+        <rdfs:comment>Order of quasi-reptile like monsters</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Dragon -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Dragon">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Draconid"/>
+        <rdfs:comment>Flying four-legged reptilian monsters capable of breathing fire.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Druid -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Druid">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Profession"/>
+        <rdfs:comment>Druid are forrest mages that prefer a more nature-friendly approach to studying the chaose magic.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Dryad -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Dryad">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Non-Human"/>
+        <rdfs:comment>Are wood nymphs that are either born by a dryand after intercourse with a human or non-human, or by magical transformation</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Dwarf -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Dwarf">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Non-Human"/>
+        <rdfs:comment>Non-human race of peole, that specialize in weapon smithing and gold mining.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Elder_Blood -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Elder_Blood">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Ability"/>
+        <rdfs:comment>The character in possession of this trait is a descendant of the Lara Dorren, a genetically modified elven sage that possess &quot;world-ending&quot; powers that go way beyond normal sources of magic.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Elementa -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Elementa">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Supernatural"/>
+        <rdfs:comment>Elemental creatures that use the power of the elements such as fire, aire, water and earth.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Elf -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Elf">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Non-Human"/>
+        <rdfs:comment>Non-human race, one of the first races to master the powers of chaos magic. Despises humans.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Golden_Dragon -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Golden_Dragon">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Dragon"/>
+        <rdfs:comment>A very rare sub-species of dragon, nearly extinct, capable of shapeshifting and believed to possess other magical abilities.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Green_Dragon -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Green_Dragon">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Dragon"/>
+        <rdfs:comment>Common Sub-species of dragon.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Herb -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Herb">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Ingredient"/>
+        <rdfs:comment>Natural herbs and plants with various types of properties.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Higher_Vampire -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Higher_Vampire">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Vampire"/>
+        <rdfs:comment>Higher vampires are an intelligen sub-species of vampires that are capable of speech and shapeshifting.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Human -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Human">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nick/ontologies/2022/3/the-witcher#Person"/>
+        <owl:disjointWith rdf:resource="https://dbpedia.org/ontology/Person#Non-Human"/>
+        <rdfs:comment>Norma humans, usually despise non-humans.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Hybrid_Humanoid -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Hybrid_Humanoid">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nick/ontologies/2022/3/the-witcher#Person"/>
+        <rdfs:comment>Hybrid humanoids are the off-spring born out of two different humanido races, such as humans and elves. Usually neither humans nor non-humans like them, as they have no place in either camp.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Ingredient -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Ingredient">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Item"/>
+        <rdfs:comment>Ingredients used to craft different recipes, such as potions, oils and bombs.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Insectoid -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Insectoid">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Monster"/>
+        <rdfs:comment>Insect like monsters</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Item -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Item">
+        <rdfs:comment>Various items that characters might own and/or use.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Location -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Location">
+        <rdfs:comment>Different kingdoms and locations situated in the Continent where The Witcher&apos;s story is set in.</rdfs:comment>
+        <rdfs:sameAs>https://dbpedia.org/ontology/Location</rdfs:sameAs>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Monster -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Monster">
+        <rdfs:comment>Monsters are horrible creatures that roam the Continent and prey humans, animals and corpses. They arrived via the conjunction of spheres, a cataclysmic event where multiple dimentions collided via portals and creatures and animals from different dimensions got dragged into this world.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Monster_Part -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Monster_Part">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Ingredient"/>
+        <rdfs:comment>Parts cut off of a monster&apos;s remains, such as eyes, blood, claw, eggs, etc. Can be used to craft various alchemical recipes. Witchers also usually cut the head off a monster as proof of kill or throphy after a successful hunt.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Mutagen -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Mutagen">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Ingredient"/>
+        <rdfs:comment>A mutagen is a powerful aclchemical ingredient crafted by the mages that first created the witchers, that have the ability of turning a normal human into an enchanced mutated monster hunter (Witchers). 7 out of 10 boys that go through the mutagenic process do not survive, and no girl has ever been recorded of surviving the process.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Mutagenic -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Mutagenic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nick/ontologies/2022/3/the-witcher#Person"/>
+        <rdfs:comment>Mutated humans with enchanced abilities.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Necrophage -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Necrophage">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Monster"/>
+        <rdfs:comment>Creatures that consume the flesh of the dead.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Non-Human -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Non-Human">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Profession"/>
+        <rdfs:comment>Non-humans, also reffered to as elder races, are races of intelligen humanoid people. Humans generally despise them.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Northern_Kingdoms -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Northern_Kingdoms">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Location"/>
+        <rdfs:comment>An alliance of four Northerrn Kingdoms, united against the Nilfgaardian Empire.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Oil -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Oil">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Alchemical"/>
+        <rdfs:comment>Alchemical oils are crafted and applied onto blades to increase the damage dealt to different types of monsters.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Part-Elf -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Part-Elf">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Hybrid_Humanoid"/>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Potion -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Potion">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Alchemical"/>
+        <rdfs:comment>Potions are alchemical elixirs crafted by witchers to enchance their abilites, such as seeing in the dark, turning their blood poisonous for blood drinkers, increase their durability and healing factor, etc. Potions are deadly to ordinary humans.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Profession -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Profession">
+        <rdfs:comment>Profession that one can have</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Red_Dragon -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Red_Dragon">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Dragon"/>
+        <rdfs:comment>Common Sub-species of dragon.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Relict -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Relict">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Supernatural"/>
+        <rdfs:comment>Ancient creatures</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Shapeshift -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Shapeshift">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Ability"/>
+        <rdfs:comment>Ability to adopt another shape of form, be it animal, monster or human looking. Various degrees of shapeshifting are known.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Signs -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Signs">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Ability"/>
+        <rdfs:comment>Witcher Signs are basic telekinetic spells, that witcher are capable of using after succesfully being mutated to a full fledged witcher. They are quite inferior to even the most basic spells casted by chaos users.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Siren -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Siren">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Hybrid_Humanoid"/>
+        <rdfs:comment>half human, half fish.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Sorcerer -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Sorcerer">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Profession"/>
+        <rdfs:comment>Sorceres are chaos magic wielders that dedicate their lives to studying chaos and experimenting with it in new and innovative ways, regardless the cost.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Succubus -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Succubus">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Hybrid_Humanoid"/>
+        <rdfs:comment>Succubuss (female), or Inccubus (male), are humanoids with a human face and torso, goat horns and hooves. Usually seduces other humanoid races in order to procude offspring, since they can&apos;t procreate with their own species.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Supernatural -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Supernatural">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Monster"/>
+        <rdfs:comment>Monsters of supernatural origin, weak to silver.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Vampire -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Vampire">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Supernatural"/>
+        <rdfs:comment>Vampire are blood drinking monsters</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Weapon -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Weapon">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Item"/>
+        <rdfs:comment>Weapons used by characters as a means of attack or defense</rdfs:comment>
+        <rdfs:sameAs>https://dbpedia.org/ontology/Weapon</rdfs:sameAs>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Witcher -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Witcher">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Mutagenic"/>
+        <rdfs:comment>Mutated humans trained to kill monsters for gold.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Witcher_School -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Witcher_School">
+        <rdfs:comment>Witcher guilds where the witchers are being created and trained. Each member wears a medallion in the shape of the school&apos;s animal to represent their guild.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Wyvern -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Person#Wyvern">
+        <rdfs:subClassOf rdf:resource="https://dbpedia.org/ontology/Person#Draconid"/>
+        <rdfs:comment>Two-legged reptilian flying monsters. They do not breathe fire, unlike dragons.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Aard -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Aard">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Signs"/>
+        <rdfs:comment>Telekinetic push blast.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Aedirn -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Aedirn">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Northern_Kingdoms"/>
+        <Person:is_at_war_with rdf:resource="https://dbpedia.org/ontology/Person#Nilfgaard_Empire"/>
+        <rdfs:comment>One of the Northern Kingdoms</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Alp -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Alp">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Monster"/>
+        <Person:is_weak_to_oil rdf:resource="https://dbpedia.org/ontology/Person#Vampire_Oil"/>
+        <Person:can_shapeshift rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</Person:can_shapeshift>
+        <rdfs:comment>Higher vampire that is able to shapeshift into a human female to attract victims. Unlike their relatives Bruxae, they can&apos;t speak, just mimmick human form</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Animal_Form -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Animal_Form">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Shapeshift"/>
+        <rdfs:comment>Change into animal form</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Anthropod -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Anthropod">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Insectoid"/>
+        <rdfs:comment>Genetically engineered insectoids using achemical experiments. They resemble a cockroach with blade-like spider legs and sharp teeth.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Axii -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Axii">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Signs"/>
+        <rdfs:comment>Mind beding sign that is used to calm down or manipulate creatures and humans.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Black_Magic -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Black_Magic">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Chaos"/>
+        <Person:magic_disabled_by rdf:resource="https://dbpedia.org/ontology/Person#Dimeritium_Shackles"/>
+        <rdfs:comment>Dark magic, strictly forbidden</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Blood_Spell -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Blood_Spell">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Chaos"/>
+        <Person:magic_disabled_by rdf:resource="https://dbpedia.org/ontology/Person#Dimeritium_Shackles"/>
+        <rdfs:comment>Spells using blood sacrifice</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Bruxa -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Bruxa">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Monster"/>
+        <Person:is_weak_to_oil rdf:resource="https://dbpedia.org/ontology/Person#Vampire_Oil"/>
+        <Person:is_intelligent rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</Person:is_intelligent>
+        <rdfs:comment>Higher vampire that is able to shapeshift into a human female to attract victims.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Cat -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Cat">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Potion"/>
+        <rdfs:comment>Potion that helps you see in the dark</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Changeling -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Changeling">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Monster"/>
+        <Person:is_weak_to_oil rdf:resource="https://dbpedia.org/ontology/Person#Relict_Oil"/>
+        <Person:can_shapeshift rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</Person:can_shapeshift>
+        <Person:is_weak_to_silver rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</Person:is_weak_to_silver>
+        <rdfs:comment>Relict monster capable of shapeshifting. When exposed to silver it turns into it&apos;s original form, a deformed creature.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Ciri -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Ciri">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Part-Elf"/>
+        <Person:has_elder_blood rdf:resource="https://dbpedia.org/ontology/Person#Lara_Dorhen_Gene"/>
+        <rdfs:comment>Princes Cirilla, descedant of Lara Dorren</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Cursed_Oil -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Cursed_Oil">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Oil"/>
+        <rdfs:comment>Oil effective against the Cursed</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Dimeritium_Shackles -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Dimeritium_Shackles">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Dimeritium"/>
+        <Person:disables_magic rdf:resource="https://dbpedia.org/ontology/Person#Black_Magic"/>
+        <Person:disables_magic rdf:resource="https://dbpedia.org/ontology/Person#Blood_Spell"/>
+        <Person:disables_magic rdf:resource="https://dbpedia.org/ontology/Person#Healing_Spell"/>
+        <rdfs:comment>Shackles made out of dimeritium, used to disable chaos magic.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Djinn -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Djinn">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Monster"/>
+        <Person:is_weak_to_oil rdf:resource="https://dbpedia.org/ontology/Person#Elementa_Oil"/>
+        <Person:is_weak_to_steel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</Person:is_weak_to_steel>
+        <rdfs:comment>Powerful air elemental geenie, capable of granting wishes and massive destruction</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Draconid_Oil -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Draconid_Oil">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Oil"/>
+        <rdfs:comment>Oil effective against the Draconid</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Dragon_Egg -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Dragon_Egg">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Monster_Part"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Drowner -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Drowner">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Monster"/>
+        <Person:is_weak_to_oil rdf:resource="https://dbpedia.org/ontology/Person#Necrophage_Oil"/>
+        <Person:is_weak_to_steel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</Person:is_weak_to_steel>
+        <rdfs:comment>Water creature that drown their prey and consume them once they start bloating.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Eithné -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Eithné">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Dryad"/>
+        <rdfs:comment>Dryad leader</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Ekimma -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Ekimma">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Monster"/>
+        <Person:is_weak_to_oil rdf:resource="https://dbpedia.org/ontology/Person#Vampire_Oil"/>
+        <rdfs:comment>Lesser vampire</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Elementa_Oil -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Elementa_Oil">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Oil"/>
+        <rdfs:comment>Oil effective against the Elementa</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Filavandrel_Aén_Fidháil -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Filavandrel_Aén_Fidháil">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Elf"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Fire_Spell -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Fire_Spell">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Chaos"/>
+        <Person:magic_disabled_by rdf:resource="https://dbpedia.org/ontology/Person#Dimeritium_Shackles"/>
+        <rdfs:comment>Spell drawing power from fire</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Forest_Druid -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Forest_Druid">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Druid"/>
+        <Person:use_magic rdf:resource="https://dbpedia.org/ontology/Person#Fire_Spell"/>
+        <Person:use_magic rdf:resource="https://dbpedia.org/ontology/Person#Healing_Spell"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Francesca_Findabair -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Francesca_Findabair">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Elf"/>
+        <Person:is_a_sorcerer rdf:resource="https://dbpedia.org/ontology/Person#Sorcereress"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:comment>Elven sorceress</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Geralt_of_Rivia -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Geralt_of_Rivia">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Mutagenic"/>
+        <Person:use_potion rdf:resource="https://dbpedia.org/ontology/Person#Cat"/>
+        <Person:use_potion rdf:resource="https://dbpedia.org/ontology/Person#White_Gull"/>
+        <Person:use_signs rdf:resource="https://dbpedia.org/ontology/Person#Aard"/>
+        <Person:use_signs rdf:resource="https://dbpedia.org/ontology/Person#Axii"/>
+        <Person:use_signs rdf:resource="https://dbpedia.org/ontology/Person#Igni"/>
+        <Person:use_signs rdf:resource="https://dbpedia.org/ontology/Person#Quen"/>
+        <Person:use_signs rdf:resource="https://dbpedia.org/ontology/Person#Yrden"/>
+        <Person:has_age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">90</Person:has_age>
+        <rdfs:comment>Geralt of Rivia, The Witcher is the main protagonist.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Ghoul -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Ghoul">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Monster"/>
+        <Person:is_weak_to_oil rdf:resource="https://dbpedia.org/ontology/Person#Necrophage_Oil"/>
+        <Person:is_weak_to_steel rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</Person:is_weak_to_steel>
+        <rdfs:comment>corpse eating monster, gathering around graveyards and war zones.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Golem -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Golem">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Monster"/>
+        <Person:is_weak_to_oil rdf:resource="https://dbpedia.org/ontology/Person#Elementa_Oil"/>
+        <Person:is_weak_to_steel rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</Person:is_weak_to_steel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Griffin_Feather -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Griffin_Feather">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Monster_Part"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Healing_Spell -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Healing_Spell">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Chaos"/>
+        <rdfs:comment>healing spell</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Igni -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Igni">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Signs"/>
+        <rdfs:comment>Fire sign</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Insectoid_Oil -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Insectoid_Oil">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Oil"/>
+        <rdfs:comment>Oil effective against the Insectoid</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Kaedwen -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Kaedwen">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Northern_Kingdoms"/>
+        <Person:is_at_war_with rdf:resource="https://dbpedia.org/ontology/Person#Nilfgaard_Empire"/>
+        <rdfs:comment>One of the Northern Kingdoms</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Kaer_Morhen -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Kaer_Morhen">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Location"/>
+        <Person:at_peace_with rdf:resource="https://dbpedia.org/ontology/Person#Skellige_Islands"/>
+        <rdfs:comment>The Witcher School of the Wolf&apos;s stronghold hidden in the mountains. This is where witchers pass the winter and retreat to tend to their injuries. It is currently in ruins as it&apos;s very old and had witnessed more than a few sieges.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Kikimora -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Kikimora">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Monster"/>
+        <Person:is_weak_to_oil rdf:resource="https://dbpedia.org/ontology/Person#Insectoid_Oil"/>
+        <Person:is_weak_to_steel rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</Person:is_weak_to_steel>
+        <rdfs:comment>Water insectoid multi-legged creature that is only hostily when hungry.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Kikimora_Claw -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Kikimora_Claw">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Monster_Part"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Lara_Dorhen_Gene -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Lara_Dorhen_Gene">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Elder_Blood"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Leshy -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Leshy">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Monster"/>
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Relict"/>
+        <Person:is_weak_to_silver rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</Person:is_weak_to_silver>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Mage -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Mage">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Sorcerer"/>
+        <Person:use_magic rdf:resource="https://dbpedia.org/ontology/Person#Black_Magic"/>
+        <Person:use_magic rdf:resource="https://dbpedia.org/ontology/Person#Blood_Spell"/>
+        <Person:use_magic rdf:resource="https://dbpedia.org/ontology/Person#Fire_Spell"/>
+        <Person:use_magic rdf:resource="https://dbpedia.org/ontology/Person#Healing_Spell"/>
+        <rdfs:comment>Male Wizard</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Mousesack -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Mousesack">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Human"/>
+        <Person:is_a_druid rdf:resource="https://dbpedia.org/ontology/Person#Forest_Druid"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Necrophage_Oil -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Necrophage_Oil">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Oil"/>
+        <rdfs:comment>Oil effective against the Necrophages</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Nilfgaard_Empire -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Nilfgaard_Empire">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Location"/>
+        <Person:is_at_war_with rdf:resource="https://dbpedia.org/ontology/Person#Temeria"/>
+        <rdfs:comment>Nilgaardian Empire, form the South, ruled by a tyrant and wants to invade the Northern Kingdoms.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Phillpa_Eilhart -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Phillpa_Eilhart">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Human"/>
+        <Person:is_a_sorcerer rdf:resource="https://dbpedia.org/ontology/Person#Sorcereress"/>
+        <Person:can_shapeshift rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</Person:can_shapeshift>
+        <rdfs:comment>Sorcerress known for her mastering of the ability shapeshift into animal form.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Polymorphism -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Polymorphism">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Shapeshift"/>
+        <rdfs:comment>shapeshift into any shape or form of a living being</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Quen -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Quen">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Signs"/>
+        <rdfs:comment>protection/shield sign</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Redania -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Redania">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Northern_Kingdoms"/>
+        <Person:is_at_war_with rdf:resource="https://dbpedia.org/ontology/Person#Nilfgaard_Empire"/>
+        <rdfs:comment>One of the Northern Kingdoms</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Relict_Oil -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Relict_Oil">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Oil"/>
+        <rdfs:comment>Oil effective against the Relict</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#School_of_the_Cat -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#School_of_the_Cat">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Witcher_School"/>
+        <rdfs:comment>Witcher guild using the symbol of a cat. They excel in stealh.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#School_of_the_Griffin -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#School_of_the_Griffin">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Witcher_School"/>
+        <Person:is_diffunct rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</Person:is_diffunct>
+        <rdfs:comment>Witcher guild using the symbol of a cat. They excel at using signs.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#School_of_the_Wolf -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#School_of_the_Wolf">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Witcher_School"/>
+        <Person:is_diffunct rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</Person:is_diffunct>
+        <rdfs:comment>Witcher guild using the symbol of a cat. They excel in swordplay.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Skellige_Islands -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Skellige_Islands">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Location"/>
+        <rdfs:comment>Archipelago of islands situated in the Great Sea off the coast of the Northern Kingdoms. They are ruled by jarls and united by a king that commands all jarls, by means of elective monarchy. It is a neutral kingdom, that operates much as the Vikings did, raiding other locations.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Sorcereress -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Sorcereress">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Sorcerer"/>
+        <Person:use_magic rdf:resource="https://dbpedia.org/ontology/Person#Black_Magic"/>
+        <Person:use_magic rdf:resource="https://dbpedia.org/ontology/Person#Blood_Spell"/>
+        <Person:use_magic rdf:resource="https://dbpedia.org/ontology/Person#Fire_Spell"/>
+        <Person:use_magic rdf:resource="https://dbpedia.org/ontology/Person#Healing_Spell"/>
+        <rdfs:comment>Female sorcerer</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Striga -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Striga">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Monster"/>
+        <Person:is_weak_to_oil rdf:resource="https://dbpedia.org/ontology/Person#Cursed_Oil"/>
+        <Person:is_weak_to_silver rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</Person:is_weak_to_silver>
+        <rdfs:comment>Cursed unborn female child that died in her mother&apos;s womb.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Sylvan -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Sylvan">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Monster"/>
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Relict"/>
+        <Person:is_weak_to_silver rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</Person:is_weak_to_silver>
+        <rdfs:comment>Relict monster in the shape of a goat-man</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Temeria -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Temeria">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Northern_Kingdoms"/>
+        <rdfs:comment>One of the Northern Kingdoms</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#The_Wild_Hunt -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#The_Wild_Hunt">
+        <Person:is_weak_to_silver rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</Person:is_weak_to_silver>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Tris_Merigold -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Tris_Merigold">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Human"/>
+        <Person:is_a_sorcerer rdf:resource="https://dbpedia.org/ontology/Person#Sorcereress"/>
+        <rdfs:comment>Young sorceress</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Vampire_Oil -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Vampire_Oil">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Oil"/>
+        <rdfs:comment>Oil effective against the Vampires</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Vesemir -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Vesemir">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nick/ontologies/2022/3/the-witcher#Person"/>
+        <Person:use_signs rdf:resource="https://dbpedia.org/ontology/Person#Aard"/>
+        <Person:use_signs rdf:resource="https://dbpedia.org/ontology/Person#Quen"/>
+        <rdfs:comment>Witcher Master Of The Witcher School Of The Wolf</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Villentretenmerth -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Villentretenmerth">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Draconid"/>
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Monster"/>
+        <Person:is_weak_to_oil rdf:resource="https://dbpedia.org/ontology/Person#Draconid_Oil"/>
+        <Person:can_shapeshift rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</Person:can_shapeshift>
+        <Person:is_weak_to_silver rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</Person:is_weak_to_silver>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Werewolf -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Werewolf">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Cursed"/>
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Monster"/>
+        <Person:is_weak_to_oil rdf:resource="https://dbpedia.org/ontology/Person#Cursed_Oil"/>
+        <Person:is_weak_to_silver rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</Person:is_weak_to_silver>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#White_Gull -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#White_Gull">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Potion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Wraith -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Wraith">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Monster"/>
+        <Person:is_weak_to_silver rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</Person:is_weak_to_silver>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Yarpen_Zigrin -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Yarpen_Zigrin">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Dwarf"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Yennefer_of_Vengeberg -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Yennefer_of_Vengeberg">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Part-Elf"/>
+        <Person:is_a_sorcerer rdf:resource="https://dbpedia.org/ontology/Person#Sorcereress"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Person#Yrden -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Person#Yrden">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Person#Signs"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="urn:swrl:var#M">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#a">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#V">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#i">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://dbpedia.org/ontology/Person#can_shapeshift"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#M"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#i"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThanOrEqual"/>
+                                <swrl:arguments>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:resource="urn:swrl:var#i"/>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </swrl:arguments>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="https://dbpedia.org/ontology/Person#is_weak_to_oil"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#M"/>
+                                        <swrl:argument2 rdf:resource="https://dbpedia.org/ontology/Person#Relict_Oil"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://dbpedia.org/ontology/Person#Doppler"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#M"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://dbpedia.org/ontology/Person#can_shapeshift"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#M"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#i"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThanOrEqual"/>
+                                <swrl:arguments>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:resource="urn:swrl:var#i"/>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </swrl:arguments>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="https://dbpedia.org/ontology/Person#is_weak_to_oil"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#M"/>
+                                        <swrl:argument2 rdf:resource="https://dbpedia.org/ontology/Person#Vampire_Oil"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://dbpedia.org/ontology/Person#Higher_Vampire"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#M"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://dbpedia.org/ontology/Person#Monster"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#M"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://dbpedia.org/ontology/Person#is_weak_to_oil"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#M"/>
+                                <swrl:argument2 rdf:resource="https://dbpedia.org/ontology/Person#Draconid_Oil"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://dbpedia.org/ontology/Person#Draconid"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#M"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://dbpedia.org/ontology/Person#Monster"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#M"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://dbpedia.org/ontology/Person#is_weak_to_oil"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#M"/>
+                                <swrl:argument2 rdf:resource="https://dbpedia.org/ontology/Person#Elementa_Oil"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://dbpedia.org/ontology/Person#Elementa"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#M"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://dbpedia.org/ontology/Person#Monster"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#M"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://dbpedia.org/ontology/Person#is_weak_to_oil"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#M"/>
+                                <swrl:argument2 rdf:resource="https://dbpedia.org/ontology/Person#Insectoid_Oil"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://dbpedia.org/ontology/Person#Insectoid"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#M"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://dbpedia.org/ontology/Person#Monster"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#M"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://dbpedia.org/ontology/Person#is_weak_to_oil"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#M"/>
+                                <swrl:argument2 rdf:resource="https://dbpedia.org/ontology/Person#Necrophage_Oil"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://dbpedia.org/ontology/Person#Necrophage"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#M"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://dbpedia.org/ontology/Person#Monster"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#M"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://dbpedia.org/ontology/Person#is_weak_to_oil"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#M"/>
+                                <swrl:argument2 rdf:resource="https://dbpedia.org/ontology/Person#Relict_Oil"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://dbpedia.org/ontology/Person#Relict"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#M"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://dbpedia.org/ontology/Person#Monster"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#M"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://dbpedia.org/ontology/Person#is_weak_to_oil"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#M"/>
+                                <swrl:argument2 rdf:resource="https://dbpedia.org/ontology/Person#Vampire_Oil"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://dbpedia.org/ontology/Person#Vampire"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#M"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://dbpedia.org/ontology/Person#is_weak_to_silver"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#M"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#a"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="https://dbpedia.org/ontology/Person#Monster"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#M"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="urn:swrl:var#a"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://dbpedia.org/ontology/Person#Supernatural"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#M"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://dbpedia.org/ontology/Person#is_weak_to_steel"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#M"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#a"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="https://dbpedia.org/ontology/Person#Monster"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#M"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="urn:swrl:var#a"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://dbpedia.org/ontology/Person#Supernatural"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#M"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://dbpedia.org/ontology/Person#Monster"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#M"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://dbpedia.org/ontology/Person#is_weak_to_oil"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#M"/>
+                                <swrl:argument2 rdf:resource="https://dbpedia.org/ontology/Person#Cursed_Oil"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://dbpedia.org/ontology/Person#Cursed"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#M"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://dbpedia.org/ontology/Person#is_intelligent"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#V"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#i"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                                <swrl:arguments>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:resource="urn:swrl:var#i"/>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </swrl:arguments>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="https://dbpedia.org/ontology/Person#Vampire"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#V"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://dbpedia.org/ontology/Person#Higher_Vampire"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#V"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://dbpedia.org/ontology/Person#can_shapeshift"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#M"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#i"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                                <swrl:arguments>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:resource="urn:swrl:var#i"/>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </swrl:arguments>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="https://dbpedia.org/ontology/Person#is_weak_to_oil"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#M"/>
+                                        <swrl:argument2 rdf:resource="https://dbpedia.org/ontology/Person#Draconid_Oil"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://dbpedia.org/ontology/Person#Golden_Dragon"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#M"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
